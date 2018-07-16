@@ -22,7 +22,7 @@
     body {
       width: 100%;
       margin: 0 auto;
-      max-width: 1250px;
+      max-width: 900px;
     }
 
     .aca-viz-top-container {
@@ -31,14 +31,14 @@
     }
 
     .aca-state-legend {
-      height: 120px;
+      height: 150px;
       display: flex;
       justify-content: center;
     }
 
     .aca-state-info {
       max-width: 450px;
-      padding: 10px;
+      padding: 10px 5px 10px 20px;
       width: 100%;
       margin-top: 15px;
     }
@@ -94,7 +94,7 @@
       font-family: InterfaceRegular;
       background: #5A5E68;
       padding: 5px;
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1;
       border: 0;
       border-radius: 0;
@@ -249,22 +249,23 @@
       .await(buildMap);
 
     function buildMap(error, reinsurance, mandate, subsidies, regulation, enrollment, competition, transitional) {
-      var width = 750;
-      var height = 500;
+      var width = 500;
+      var height = 350;
 
       var clicked = false;
 
       var projection = d3.geo.albersUsa()
           .translate([width/2, height/2])
-          .scale([1000]);
+          .scale([700]);
               
       var path = d3.geo.path()
           .projection(projection);
 
       var color = d3.scale.linear()
-          .range(["#F3F1F0", "#0B3A5E","#044D7F","#1D88A1","#48BEBD", "#F47920"]);
+          .range(["#d4d2d1", "#0B3A5E","#044D7F","#1D88A1","#48BEBD", "#F47920"]);
 
       var legendText = [
+        "State has taken no action",
         "State has taken 1 action to promote access",
         "State has taken 2 actions to promote access",
         "State has taken 3 actions to promote access",
@@ -314,7 +315,7 @@
               var dc = svg.selectAll("g")
                   .data([data[i]])
                   .enter().append("g")
-                  .attr("transform", function(d) { return "translate(" + (width - 60) + "," + (height - 260) + ")"; });
+                  .attr("transform", function(d) { return "translate(" + (width - 40) + "," + (height - 150) + ")"; });
               dc.append("rect")
                   .attr("class", "aca-dc")
                   .attr("width", 18)
@@ -350,7 +351,7 @@
                   .style("opacity", 1);
               div.text(d.properties.name)
                   .style("left", (d3.event.pageX) + "px")
-                  .style("top", (d3.event.pageY - 28) + "px");
+                  .style("top", (d3.event.pageY - 30) + "px");
             })
             .on("mouseout", function(d) {
               if(!clicked)
@@ -364,9 +365,9 @@
           var legend = d3.select(".aca-state-legend").append("svg")
               .attr("class", "legend")
               .attr("width", 350)
-              .attr("height", 120)
+              .attr("height", 150)
               .selectAll("g")
-              .data(color.domain().slice(1))
+              .data(color.domain().slice())
               .enter()
               .append("g")
               .attr("transform", function(d, i) { return "translate(0," + i * 25 + ")"; })
@@ -394,14 +395,14 @@
         svg.selectAll("path")
             .style("fill-opacity", function(d) {
               if(action != d.properties.action) {
-                return 0.3;
+                return 0.2;
               }
               return 1;
             });
         svg.select(".aca-dc")
             .style("fill-opacity", function(d) {
               if(action != d.action) {
-                return 0.3;
+                return 0.2;
               }
               return 1;
             });

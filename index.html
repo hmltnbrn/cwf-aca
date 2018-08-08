@@ -20,6 +20,10 @@
     }
 
     body {
+      margin: 0;
+    }
+
+    .body-container {
       width: 100%;
       margin: 0 auto;
       max-width: 900px;
@@ -127,96 +131,126 @@
       font-family: InterfaceBold;
     }
 
+    .download-data {
+      font-family: InterfaceRegular;
+      background-color: #48bebd;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 4px;
+      float:right;
+      margin-right: 10px;
+    }
+
+    .button-container {
+      margin-bottom: 20px;
+      position: relative;
+      float: right;
+      width: 100%;
+    }
+
   </style>
-</head>
-<body>
-  <div class="aca-viz-top-container">
-    <div class="aca-viz-container">
-      <div class="aca-state-viz"></div>
-      <div class="aca-state-legend"></div>
-    </div>
-    <div class="aca-state-info">
-      <h1 class="state-name">Alabama</h1>
-      <div class="aca-styled-select">
-        <select id="aca-selector">
-          <option value="reinsurance">Reinsurance</option>
-          <option value="mandate">Individual Mandate Requiring Health Coverage</option>
-          <option value="subsidies">Health Coverage Subsidies</option>
-          <option value="regulation">Short-Term Health Coverage Regulation</option>
-          <option value="enrollment">Annual Open Enrollment Period Extensions</option>
-          <option value="competition">Promotion of ACA Marketplace Competition</option>
-          <option value="transitional">Transitional Health Coverage</option>
-        </select>
+  <div class="body-container">
+    <div class="aca-viz-top-container">
+      <div class="aca-viz-container">
+        <div class="aca-state-viz"></div>
+        <div class="aca-state-legend"></div>
       </div>
-      <div class="state-info-body reinsurance">
-        <p class="reinsurance-program"></p>
-        <p class="reinsurance-waiver"></p>
-        <p class="reinsurance-program-funding"></p>
-        <p class="reinsurance-state-funding"></p>
-        <p class="reinsurance-federal-funding"></p>
-        <p class="reinsurance-premiums"></p>
-        <p class="reinsurance-design"></p>
-      </div>
-      <div class="state-info-body mandate">
-        <p class="mandate-info"></p>
-        <p class="mandate-coverage"></p>
-        <p class="mandate-penalty"></p>
-      </div>
-      <div class="state-info-body subsidies">
-        <p class="subsidies-info"></p>
-      </div>
-      <div class="state-info-body regulation">
-        <p class="regulation-info"></p>
-        <p class="regulation-underwritten"></p>
-        <p class="regulation-contract"></p>
-        <p class="regulation-enrollment"></p>
-      </div>
-      <div class="state-info-body enrollment">
-        <p class="enrollment-present"></p>
-        <p class="enrollment-future"></p>
-      </div>
-      <div class="state-info-body competition">
-        <p class="competition-rule"></p>
-        <p class="competition-pool"></p>
-        <p class="competition-individual"></p>
-        <p class="competition-public"></p>
-        <p class="competition-minimum"></p>
-      </div>
-      <div class="state-info-body transitional">
-        <p class="transitional-info"></p>
+      <div class="aca-state-info">
+        <h1 class="state-name">Alabama</h1>
+        <div class="aca-styled-select">
+          <select id="aca-selector">
+            <option value="default">Select a policy action</option>
+            <option value="reinsurance">Reinsurance</option>
+            <option value="mandate">Individual Mandate Requiring Health Coverage</option>
+            <option value="subsidies">Health Coverage Subsidies</option>
+            <option value="regulation">Short-Term Health Coverage Regulation</option>
+            <option value="enrollment">Annual Open Enrollment Period Extensions</option>
+            <option value="competition">Promotion of ACA Marketplace Competition</option>
+            <option value="transitional">Transitional Health Coverage</option>
+          </select>
+        </div>
+        <div class="state-info-body default">
+          <p class="default-info">Select a state on the map and an action above to learn what the individual insurance market stabilization strategies states may be pursuing.</p>
+        </div>
+        <div class="state-info-body reinsurance">
+          <p class="reinsurance-program"></p>
+          <p class="reinsurance-waiver"></p>
+          <p class="reinsurance-program-funding"></p>
+          <p class="reinsurance-state-funding"></p>
+          <p class="reinsurance-federal-funding"></p>
+          <p class="reinsurance-premiums"></p>
+          <p class="reinsurance-design"></p>
+        </div>
+        <div class="state-info-body mandate">
+          <p class="mandate-info"></p>
+          <p class="mandate-coverage"></p>
+          <p class="mandate-penalty"></p>
+        </div>
+        <div class="state-info-body subsidies">
+          <p class="subsidies-info"></p>
+        </div>
+        <div class="state-info-body regulation">
+          <p class="regulation-info"></p>
+          <p class="regulation-underwritten"></p>
+          <p class="regulation-contract"></p>
+          <p class="regulation-enrollment"></p>
+        </div>
+        <div class="state-info-body enrollment">
+          <p class="enrollment-present"></p>
+          <p class="enrollment-future"></p>
+        </div>
+        <div class="state-info-body competition">
+          <p class="competition-rule"></p>
+          <p class="competition-pool"></p>
+          <p class="competition-individual"></p>
+          <p class="competition-public"></p>
+          <p class="competition-minimum"></p>
+        </div>
+        <div class="state-info-body transitional">
+          <p class="transitional-info"></p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="aca-notes">
-    <hr/>
-    <div class="aca-note reinsurance">
-      <p><strong>Notes:</strong> Section 1332 of the ACA authorizes states to apply to waive specified provisions of the health law to facilitate state-specific programs for improving coverage. If a state's "innovation waiver" program is forecast to reduce federal spending, the state is entitled to have these savings passed through to it for purposes of implementing the program. The states identified in this table have secured, or are seeking, approval for innovation waivers that use these federal "pass-through" funds to partially finance the state's reinsurance program.</p>
-      <p>*Program funding and projected premium effects data are estimates and come from the states' Section 1332 waiver applications.</p>
-      <p>**For states with an approved waiver, the federal share of program funding equals the federal pass-through funding for the current year, as calculated by the federal government, divided by the total program funding, as estimated in the state's waiver application. For these states, the state share of funding equals the difference of total program funding and federal funding. For states with a waiver application pending but not yet approved, the respective funding shares are derived from information provided in the states' waiver applications.</p>
-      <p>***State reinsurance programs typically are designed following one of two broad models. A "condition-specific" reinsurance program covers some or all of an insurer's claims costs that have been incurred by enrollees diagnosed with one more specified high-cost health conditions. An "attachment point" reinsurance program covers some or all of an insurer's claims costs that exceed a specified threshold, or attachment point, regardless of the type of claim.</p>
+    <div class="button-container">
+      <a class="download-data" href="https://s3.amazonaws.com/interactives.commonwealthfund.org/2018/july/lucia-map/Lucia_State_Actions_Individual_Mandate_Data_073018.xlsx">Download data tables</a>
     </div>
-    <div class="aca-note mandate">
-      <p><strong>Note:</strong> The ACA requires most individuals to maintain "minimum essential" health coverage or pay a tax penalty (the individual mandate). Recent changes in federal law, effective in 2019, reduce this tax penalty to $0, but do not repeal the underlying requirement to maintain coverage. This graphic identifies states that require residents to maintain adequate health coverage -- whether or not the state imposes a penalty on individuals who fail to do so -- notwithstanding the elimination of the federal tax penalty.</p>
-    </div>
-    <div class="aca-note subsidies">
-      <p><strong>Note:</strong> The ACA provides federal subsidies to reduce the cost of individual market health insurance for eligible individuals. Premium tax credits are available to otherwise eligible individuals with household income between 100% and 400% of the federal poverty level (FPL) who enroll in coverage through an ACA marketplace, and cost-sharing subsidies are available to such individuals with incomes between 100% and 250% FPL who enroll in a silver tier plan. This graphic identifies states that make available separate, state-funded subsidies to defray the cost of ACA-compliant individual market health coverage: for example, an additional premium subsidy for individuals receiving federal premium tax credits, or a subsidy for individual market consumers whose incomes render them ineligible for federal coverage assistance.</p>
-    </div>
-    <div class="aca-note regulation">
-      <p><strong>Notes:</strong> Short-term policies are not subject to the federal consumer protections of the ACA and, pursuant to recent federal regulatory changes, may provide coverage for a period of up to 364 days. This graphic identifies states that, by limiting the maximum duration of short-term coverage to less than 364 days, or by applying state law consumer protections to such coverage, impose requirements on short-term plans than are more stringent than those mandated under the default federal approach.</p>
-      <p>*These states prohibit short-term insurers from discriminating on the basis of an applicant's health status.</p>
-      <p>**A state is identified as having limited the initial contract duration of underwritten short-term coverage to less than 364 days if a short-term plan lasting longer than the specified duration would become subject to one or more of the following state consumer protections: guaranteed issue, guaranteed renewability, or required coverage of essential health benefits. Such states typically impose limitations on the renewal of short-term policies, but, in most cases, do not prohibit insurers from issuing multiple new short-term policies consecutively.</p>
-      <p>***A state is identified as having limited the total length of time a consumer may be enrolled in underwritten short-term coverage to less than 364 days if it prohibits the issuance of multiple short-term policies consecutively, closing a loophole that otherwise may permit continuous enrollment in such plans.</p>
-      <p>†Connecticut makes consecutive short-term policies subject to certain preexisting condition coverage requirements.</p>
-      <p>††Hawaii also prohibits the issuance of a short-term policy to an individual who was eligible to purchase coverage through the ACA marketplace during an open or special enrollment period in the previous calendar year.</p>
-    </div>
-    <div class="aca-note enrollment">
-      <p><strong>Note:</strong> Federal regulations established a 45-day open enrollment period for 2018 coverage beginning on November 1, 2017 and ending on December 15, 2017. For 2019 coverage, the open enrollment window will again last 45 days, beginning on November 1, 2018 and ending on December 15, 2018. The 11 states (and the District of Columbia) that operate their own ACA marketplaces and use their own enrollment platforms have authority to modify the federally-specified enrollment dates, including by lengthening the duration of the sign-up period. By contrast, the 39 states that use Healthcare.gov for enrollment do not have such authority. This graphic identifies those states that extended the length of the 2018 open enrollment period beyond the 45-day federal default, or that plan to extend the duration of the 2019 enrollment period. While, as a formal matter, some of these states have provided for an extension by establishing a broadly available special enrollment period beginning on the day following the end of the federal default open enrollment window, the table identifies those states that, as a matter of practice, offer a continuous, broadly available enrollment period for next-year coverage than is longer than 45 days.</p>
-    </div>
-    <div class="aca-note competition">
-      <p><strong>Note:</strong> This graphic identifies states that have adopted certain specific actions intended to promote a competitive ACA marketplace. In particular, only those states that: (1) have merged their individual and small-group markets; (2) require that all individual market coverage be sold through the ACA marketplace; or (3) leverage insurers’ participation in state public health insurance programs, such as Medicaid, or state insurance markets to encourage or require participation in the ACA marketplace. Other factors and state actions not identified here also may affect the competitiveness of a state's ACA marketplace.</p>
-    </div>
-    <div class="aca-note transitional">
-      <p><strong>Note:</strong> In states where transitional policies are allowed, insurers may choose whether to continue to offer such policies. In some states, transitional policies may no longer exist in the individual market, even though permitted under state law.</p>
+    <div class="aca-notes">
+      <hr/>
+      <div class="aca-note reinsurance">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p>
+        <p><strong>Notes:</strong> Section 1332 of the ACA authorizes states to apply to waive specified provisions of the health law to facilitate state-specific programs for improving coverage. If a state's "innovation waiver" program is forecast to reduce federal spending, the state is entitled to have these savings passed through to it for purposes of implementing the program. The states identified in this table have secured, or are seeking, approval for innovation waivers that use these federal "pass-through" funds to partially finance the state's reinsurance program.</p>
+        <p>*Program funding and projected premium effects data are estimates and come from the states' Section 1332 waiver applications.</p>
+        <p>**For states with an approved waiver for which pass-through funding levels have been announced by the federal government, the federal share of program funding equals the federal pass-through funding for the year identified, as calculated by the federal government, divided by the total program funding, as estimated in the state's waiver application. For these states, the state share of funding equals the difference of total program funding and federal funding. For states with a pending waiver application, or with an approved application for which pass-through funding levels have not yet been announced, the respective funding shares are derived from information provided in the state's waiver application.</p>
+        <p>***State reinsurance programs typically are designed following one of two broad models. A "condition-specific" reinsurance program covers some or all of an insurer's claims costs that have been incurred by enrollees diagnosed with one more specified high-cost health conditions. An "attachment point" reinsurance program covers some or all of an insurer's claims costs that exceed a specified threshold, or attachment point, regardless of the type of claim.</p>
+      </div>
+      <div class="aca-note mandate">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p><p><strong>Note:</strong> The ACA requires most individuals to maintain "minimum essential" health coverage or pay a tax penalty (the individual mandate). Recent changes in federal law, effective in 2019, reduce this tax penalty to $0, but do not repeal the underlying requirement to maintain coverage. This graphic identifies states that require residents to maintain adequate health coverage -- whether or not the state imposes a penalty on individuals who fail to do so -- notwithstanding the elimination of the federal tax penalty.</p>
+      </div>
+      <div class="aca-note subsidies">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p><p><strong>Note:</strong> The ACA provides federal subsidies to reduce the cost of individual market health insurance for eligible individuals. Premium tax credits are available to otherwise eligible individuals with household income between 100% and 400% of the federal poverty level (FPL) who enroll in coverage through an ACA marketplace, and cost-sharing subsidies are available to such individuals with incomes between 100% and 250% FPL who enroll in a silver tier plan. This graphic identifies states that make available separate, state-funded subsidies to defray the cost of ACA-compliant individual market health coverage: for example, an additional premium subsidy for individuals receiving federal premium tax credits, or a subsidy for individual market consumers whose incomes render them ineligible for federal coverage assistance.</p>
+      </div>
+      <div class="aca-note regulation">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p><p><strong>Notes:</strong> Short-term policies are not subject to the federal consumer protections of the ACA and, under soon-to-be finalized federal regulatory changes, may provide coverage for a period of up to 364 days. This graphic identifies states that, by limiting the maximum duration of short-term coverage to less than 364 days, or by applying state law consumer protections to such coverage, impose requirements on short-term plans than are more stringent than those mandated under the default federal approach.</p>
+        <p>*These states prohibit short-term insurers from discriminating on the basis of an applicant's health status.</p>
+        <p>**A state is identified as having limited the initial contract duration of underwritten short-term coverage to less than 364 days if a short-term plan lasting longer than the specified duration would become subject to one or more of the following state consumer protections: guaranteed issue, guaranteed renewability, or required coverage of essential health benefits. Such states typically impose limitations on the renewal of short-term policies, but, in most cases, do not prohibit insurers from issuing multiple new short-term policies consecutively.</p>
+        <p>***A state is identified as having limited the total length of time a consumer may be enrolled in underwritten short-term coverage to less than 364 days if it prohibits the issuance of multiple short-term policies consecutively, closing a loophole that otherwise may permit continuous enrollment in such plans.</p>
+        <p>†Connecticut makes consecutive short-term policies subject to certain preexisting condition coverage requirements.</p>
+        <p>††Hawaii also prohibits the issuance of a short-term policy to an individual who was eligible to purchase coverage through the ACA marketplace during an open or special enrollment period in the previous calendar year.</p>
+      </div>
+      <div class="aca-note enrollment">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p><p><strong>Note:</strong> Federal regulations established a 45-day open enrollment period for 2018 coverage beginning on November 1, 2017 and ending on December 15, 2017. For 2019 coverage, the open enrollment window will again last 45 days, beginning on November 1, 2018 and ending on December 15, 2018. The 11 states (and the District of Columbia) that operate their own ACA marketplaces and use their own enrollment platforms have authority to modify the federally-specified enrollment dates, including by lengthening the duration of the sign-up period. By contrast, the 39 states that use Healthcare.gov for enrollment do not have such authority. This graphic identifies those states that extended the length of the 2018 open enrollment period beyond the 45-day federal default, or that plan to extend the duration of the 2019 enrollment period. While, as a formal matter, some of these states have provided for an extension by establishing a broadly available special enrollment period beginning on the day following the end of the federal default open enrollment window, the table identifies those states that, as a matter of practice, offer a continuous, broadly available enrollment period for next-year coverage than is longer than 45 days.</p>
+      </div>
+      <div class="aca-note competition">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p><p><strong>Note:</strong> This graphic identifies states that have adopted certain specific actions intended to promote a competitive ACA marketplace. In particular, only those states that: (1) have merged their individual and small-group markets; (2) require that all individual market coverage be sold through the ACA marketplace; or (3) leverage insurers’ participation in state public health insurance programs, such as Medicaid, or state insurance markets to encourage or require participation in the ACA marketplace. Other factors and state actions not identified here also may affect the competitiveness of a state's ACA marketplace.</p>
+      </div>
+      <div class="aca-note transitional">
+        <p><strong>Source:</strong> J. Giovannelli, K. Lucia, and S. Corlette, "To Understand How Consumers Are Faring in the Individual Health Insurance Markets, Watch the States," To the Point (blog), Commonwealth Fund, July 18, 2018.<p><p><strong>Notes:</strong> In states where transitional policies are allowed, insurers may choose whether to continue to offer such policies. In some states, transitional policies may no longer exist in the individual market, even though permitted under state law.  Transitional policies are those that were issued following the ACA’s enactment in 2010 but before 2014. These policies, also known as “grandmothered plans,” are required to meet some, but not all, of the ACA’s individual market consumer protections.</p>
+      </div>
     </div>
   </div>
   <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -246,379 +280,519 @@
       .defer(d3.json, 'data/enrollment.json')
       .defer(d3.json, 'data/competition.json')
       .defer(d3.json, 'data/transitional.json')
-      .await(buildMap);
+      .await(renderAll);
 
-    function buildMap(error, reinsurance, mandate, subsidies, regulation, enrollment, competition, transitional) {
-      var width = 500;
-      var height = 350;
+    function renderAll(error, reinsurance, mandate, subsidies, regulation, enrollment, competition, transitional) {
+      renderMap();
 
-      var clicked = false;
+      window.addEventListener('orientationchange', renderMap);
 
-      var projection = d3.geo.albersUsa()
-          .translate([width/2, height/2])
-          .scale([700]);
-              
-      var path = d3.geo.path()
-          .projection(projection);
+      function renderMap() {
+        var width = 500;
+        var height = 350;
+        var scale = 700;
+        var mobile = false;
+        var clicked = false;
 
-      var color = d3.scale.linear()
-          .range(["#d4d2d1", "#0B3A5E","#044D7F","#1D88A1","#48BEBD", "#F47920"]);
+        if(screen.width <= 768) {
+          mobile = true;
+          d3.select(".aca-viz-top-container")
+              .style("flex-direction", "column")
+              .style("align-items", "center");
+          d3.select(".aca-state-info")
+              .style("max-width", "75%")
+              .style("padding-left", 5)
+              .style("padding-bottom", 50);
+          d3.select("#aca-selector")
+              .style("height", 50)
+              .style("font-size", 25);
+          width = parseInt(d3.select(".body-container").style("width"));
+          height = 500;
+          scale = 1000;
+        }
 
-      var legendText = [
-        "State has taken no action",
-        "State has taken 1 action to promote access",
-        "State has taken 2 actions to promote access",
-        "State has taken 3 actions to promote access",
-        "State has taken 4 or more actions to promote access",
-        "State has taken 1 action likely to decrease access"
-      ];
+        var projection = d3.geo.albersUsa()
+            .translate([width/2, height/2])
+            .scale([scale]);
+                
+        var path = d3.geo.path()
+            .projection(projection);
 
-      var svg = d3.select(".aca-state-viz")
-          .append("svg")
-          .attr("width", width)
-          .attr("height", height)
-          .on("click", function() {
-            if(clicked) {
-              d3.selectAll('path')
-                  .style("fill-opacity", function(d) {
-                    return 1;
-                  });
-              d3.select(".aca-dc")
-                  .style("fill-opacity", function(d) {
-                    return 1;
-                  });
-              clicked = false;
-            }
-          });
+        var color = d3.scale.linear();
 
-      var div = d3.select("body")
-          .append("div")
-          .attr("class", "tooltip")
-          .style("opacity", 0);
+        d3.select(".the-us-map").remove();
 
-      d3.csv("data/state-actions.csv", function(data) {
-        color.domain([0,1,2,3,4,5]);
-
-        d3.json("data/us-states.json", function(json) {
-          for (var i = 0; i < data.length; i++) {
-            var dataState = data[i].state;
-            var dataValue = data[i].action;
-
-            for (var j = 0; j < json.features.length; j++)  {
-              var jsonState = json.features[j].properties.name;
-              if (dataState == jsonState) {
-                json.features[j].properties.action = dataValue; 
-                break;
+        var svg = d3.select(".aca-state-viz")
+            .append("svg")
+            .attr("class", "the-us-map")
+            .attr("width", width)
+            .attr("height", height)
+            .on("click", function() {
+              if(clicked) {
+                d3.selectAll('path')
+                    .style("fill-opacity", function(d) {
+                      return 1;
+                    });
+                d3.select(".aca-dc")
+                    .style("fill-opacity", function(d) {
+                      return 1;
+                    });
+                clicked = false;
               }
+            });
+
+        var dc = svg.append("g")
+            .attr("transform", function(d) {
+              if(!mobile)
+                return "translate(" + (width - 40) + "," + (height - 150) + ")";
+              else
+                return "translate(" + (width - 120) + "," + (height - 250) + ")";
+            })
+            .attr("class", "dc-group");
+
+        var div = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+        
+        buildMapLegend("state-actions");
+
+        dc.append("text")
+            .attr("class","aca-dc-text")
+            .attr("x", 24)
+            .attr("y", 9)
+            .attr("dy", ".35em")
+            .text("DC");
+
+        function buildMapLegend(legendType) {
+          d3.csv(`data/${legendType}.csv`, function(data) {
+            var legendText = [];
+            switch (legendType) {
+              case 'state-actions':
+                color
+                  .domain([0,1,2,3,4,5])
+                  .range(["#d4d2d1", "#0B3A5E", "#044D7F", "#1D88A1", "#48BEBD", "#F47920"]);
+                  legendText = [
+                    "State has taken no action",
+                    "State has taken 1 action to promote access",
+                    "State has taken 2 actions to promote access",
+                    "State has taken 3 actions to promote access",
+                    "State has taken 4 or more actions to promote access",
+                    "State has taken 1 action likely to decrease access"
+                  ];
+                break;
+              case 'reinsurance':
+                color
+                  .domain([0,1,2])
+                  .range(["#d4d2d1", "#92D7D7", "#4ABDBC"]);
+                  legendText = [
+                    "Does not operate a reinsurance program",
+                    "Operates a reinsurance program since 2018",
+                    "Will operate a reinsurance program in 2019"
+                  ];
+                break;
+              case 'mandate':
+                color
+                  .domain([0,1])
+                  .range(["#d4d2d1", "#4ABDBC"]);
+                  legendText = [
+                    "Does not require individuals to maintain coverage",
+                    "Requires individuals to maintain coverage"
+                  ];
+                break;
+              case 'subsidies':
+                color
+                  .domain([0,1,2])
+                  .range(["#d4d2d1", "#92D7D7", "#4ABDBC"]);
+                  legendText = [
+                    "Provides no premium or cost-sharing subsidies",
+                    "Provides premium subsidies",
+                    "Provides premium and cost-sharing subsidies"
+                  ];
+                break;
+              case 'regulation':
+                color
+                  .domain([0,1])
+                  .range(["#d4d2d1", "#4ABDBC"]);
+                  legendText = [
+                    "Requires no more regulation than federal government",
+                    "More rigorous regulation than federal government"
+                  ];
+                break;
+              case 'enrollment':
+                color
+                  .domain([0,1,2])
+                  .range(["#d4d2d1", "#92D7D7", "#4ABDBC"]);
+                  legendText = [
+                    "Did not extend 2018 open enrollment period",
+                    "Extended 2018 open enrollment period",
+                    "Extended 2018 and 2019 open enrollment periods"
+                  ];
+                break;
+              case 'competition':
+                color
+                  .domain([0,1])
+                  .range(["#d4d2d1", "#4ABDBC"]);
+                  legendText = [
+                    "No rules to promote marketplace competition",
+                    "One or more rules to promote marketplace competition"
+                  ];
+                break;
+              case 'transitional':
+                color
+                  .domain([0,1])
+                  .range(["#4ABDBC", "#d4d2d1"]);
+                  legendText = [
+                    "Prohibits transitional policies",
+                    "Permits transitional policies"
+                  ];
+                break;
+              default:
+                console.log("There's an error");
             }
-            if(dataState == "District of Columbia") {
-              var dc = svg.selectAll("g")
-                  .data([data[i]])
-                  .enter().append("g")
-                  .attr("transform", function(d) { return "translate(" + (width - 40) + "," + (height - 150) + ")"; });
-              dc.append("rect")
-                  .attr("class", "aca-dc")
-                  .attr("width", 18)
-                  .attr("height", 18)
-                  .style("fill", function(d) { return color(d.action); })
+            d3.json("data/us-states.json", function(json) {
+              for (var i = 0; i < data.length; i++) {
+                var dataState = data[i].state;
+                var dataValue = data[i].action;
+
+                for (var j = 0; j < json.features.length; j++)  {
+                  var jsonState = json.features[j].properties.name;
+                  if (dataState == jsonState) {
+                    json.features[j].properties.action = dataValue; 
+                    break;
+                  }
+                }
+                if(dataState == "District of Columbia") {
+                  var dcRect = d3.select(".dc-group").selectAll("rect")
+                      .data([data[i]]);
+                  dcRect.exit().remove();
+                  dcRect.enter()
+                      .append("rect")
+                      .attr("class", "aca-dc")
+                      .attr("width", 18)
+                      .attr("height", 18)
+                      .on("mouseover", function(d) {
+                        if(!clicked)
+                          d3.select(this).style("fill-opacity", 0.7);
+                      })
+                      .on("mouseout", function(d) {
+                        if(!clicked)
+                          d3.select(this).style("fill-opacity", 1);
+                      })
+                      .on("click", stateClicked);
+                  dcRect.style("fill", function(d) { return color(d.action); });
+                }
+              }
+
+              var paths = svg.selectAll("path")
+                  .data(json.features)
+              paths.exit().remove();
+              paths.enter()
+                  .append("path")
+                  .attr("d", path)
+                  .style("stroke", "#fff")
+                  .style("stroke-width", "1")
                   .on("mouseover", function(d) {
-                    d3.select(this).style("fill-opacity", 0.7);
+                    if(!clicked)
+                      d3.select(this).style("fill-opacity", 0.7);
+                    div.transition()
+                        .style("opacity", 1);
+                    div.text(d.properties.name)
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 30) + "px");
                   })
                   .on("mouseout", function(d) {
-                    d3.select(this).style("fill-opacity", 1);
+                    if(!clicked)
+                      d3.select(this).style("fill-opacity", 1);
+                    div.transition()
+                        .style("opacity", 0);
                   })
                   .on("click", stateClicked);
-              dc.append("text")
-                  .attr("class","aca-dc-text")
+              paths
+                  .style("fill", function(d) { return color(d.properties.action); });
+
+              d3.select(".legend").remove();
+
+              var legend = d3.select(".aca-state-legend").append("svg")
+                  .attr("class", "legend")
+                  .attr("width", 350)
+                  .attr("height", 150)
+                  .selectAll("g")
+                  .data(color.domain().slice())
+                  .enter()
+                  .append("g")
+                  .attr("transform", function(d, i) { return "translate(0," + i * 25 + ")"; })
+                  .on("mouseover", legendMouseover)
+                  .on("mouseout", legendMouseout);
+
+              legend.append("circle")
+                  .attr("cx", 9)
+                  .attr("cy", 9)
+                  .attr("r", 8)
+                  .style("fill", color);
+
+              legend.append("text")
+                  .data(legendText)
                   .attr("x", 24)
                   .attr("y", 9)
                   .attr("dy", ".35em")
-                  .text("DC");
-            }
-          }
+                  .style("font-size", function(d) {
+                    if(mobile) return 16;
+                    else return 14;
+                  })
+                  .text(function(d) { return d; });
 
-          svg.selectAll("path")
-            .data(json.features)
-            .enter()
-            .append("path")
-            .attr("d", path)
-            .style("stroke", "#fff")
-            .style("stroke-width", "1")
-            .on("mouseover", function(d) {
-              if(!clicked)
-                d3.select(this).style("fill-opacity", 0.7);
-              div.transition()
-                  .style("opacity", 1);
-              div.text(d.properties.name)
-                  .style("left", (d3.event.pageX) + "px")
-                  .style("top", (d3.event.pageY - 30) + "px");
-            })
-            .on("mouseout", function(d) {
-              if(!clicked)
-                d3.select(this).style("fill-opacity", 1);
-              div.transition()
-                  .style("opacity", 0);
-            })
-            .on("click", stateClicked)
-            .style("fill", function(d) { return color(d.properties.action); });
+            });
 
-          var legend = d3.select(".aca-state-legend").append("svg")
-              .attr("class", "legend")
-              .attr("width", 350)
-              .attr("height", 150)
-              .selectAll("g")
-              .data(color.domain().slice())
-              .enter()
-              .append("g")
-              .attr("transform", function(d, i) { return "translate(0," + i * 25 + ")"; })
-              .on("mouseover", legendMouseover)
-              .on("mouseout", legendMouseout);
-
-          legend.append("circle")
-              .attr("cx", 9)
-              .attr("cy", 9)
-              .attr("r", 8)
-              .style("fill", color);
-
-          legend.append("text")
-              .data(legendText)
-              .attr("x", 24)
-              .attr("y", 9)
-              .attr("dy", ".35em")
-              .text(function(d) { return d; });
           });
+        }
 
-      });
+        function legendMouseover(d) {
+          var action = d;
+          svg.selectAll("path")
+              .style("fill-opacity", function(d) {
+                if(action != d.properties.action) {
+                  return 0.2;
+                }
+                return 1;
+              });
+          svg.select(".aca-dc")
+              .style("fill-opacity", function(d) {
+                if(action != d.action) {
+                  return 0.2;
+                }
+                return 1;
+              });
+        }
 
-      function legendMouseover(d) {
-        var action = d;
-        svg.selectAll("path")
-            .style("fill-opacity", function(d) {
-              if(action != d.properties.action) {
-                return 0.2;
-              }
-              return 1;
-            });
-        svg.select(".aca-dc")
-            .style("fill-opacity", function(d) {
-              if(action != d.action) {
-                return 0.2;
-              }
-              return 1;
-            });
+        function legendMouseout() {
+          svg.selectAll("path")
+              .style("fill-opacity", 1);
+          svg.select(".aca-dc")
+              .style("fill-opacity", 1);
+        }
+
+        var selector = document.getElementById("aca-selector");
+        var selectorValue = selector.value;
+        var selectedState = "Alabama";
+        d3.selectAll(".state-info-body").hide();
+        setDefaultData();
+
+        selector.addEventListener("change", function() {
+          selectorValue = selector.value;
+          if(selectedState) checkSelector();
+        });
+
+        function stateClicked(d) {
+          svg.selectAll("path")
+              .style("fill-opacity", function(d) {
+                return 0.3;
+              });
+          d3.select(".aca-dc")
+              .style("fill-opacity", function(d) {
+                return 0.3;
+              });
+          d3.select(this)
+              .style("fill-opacity", function(d) {
+                return 1;
+              });
+          clicked = true;
+          if(d.state) {
+            selectedState = d.state;
+          }
+          else {
+            selectedState = d.properties.name;
+          }
+          d3.select(".aca-state-info").select("h1").text(selectedState);
+          checkSelector();
+          d3.event.stopPropagation();
+        }
+
+        function checkSelector() {
+          d3.selectAll(".state-info-body").hide();
+          switch (selectorValue) {
+            case 'default':
+              setDefaultData();
+              buildMapLegend("state-actions");
+              break;
+            case 'reinsurance':
+              setReinsuranceData();
+              buildMapLegend(selectorValue);
+              break;
+            case 'mandate':
+              setMandateData();
+              buildMapLegend(selectorValue);
+              break;
+            case 'subsidies':
+              setSubsidiesData();
+              buildMapLegend(selectorValue);
+              break;
+            case 'regulation':
+              setRegulationData();
+              buildMapLegend(selectorValue);
+              break;
+            case 'enrollment':
+              setEnrollmentData();
+              buildMapLegend(selectorValue);
+              break;
+            case 'competition':
+              setCompetitionData();
+              buildMapLegend(selectorValue);
+              break;
+            case 'transitional':
+              setTransitionalData();
+              buildMapLegend(selectorValue);
+              break;
+            default:
+              console.log("There's an error");
+          }
+        }
+
+        function setDefaultData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.select(".state-info-body.default").show();
+        }
+
+        function setReinsuranceData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.reinsurance").selectAll("p").show();
+          d3.select(".state-info-body.reinsurance").show();
+          d3.select(".state-info-body.reinsurance").select(".reinsurance-program").text(reinsurance[selectedState].program);
+          if(reinsurance[selectedState].waiver) {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-waiver").text(reinsurance[selectedState].waiver);
+          }
+          else {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-waiver").hide();
+          }
+          if(reinsurance[selectedState].programFunding) {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-program-funding").text(reinsurance[selectedState].programFunding);
+          }
+          else {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-program-funding").hide();
+          }
+          if(reinsurance[selectedState].stateFunding) {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-state-funding").text(reinsurance[selectedState].stateFunding);
+          }
+          else {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-state-funding").hide();
+          }
+          if(reinsurance[selectedState].federalFunding) {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-federal-funding").text(reinsurance[selectedState].federalFunding);
+          }
+          else {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-federal-funding").hide();
+          }
+          if(reinsurance[selectedState].premiums) {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-premiums").text(reinsurance[selectedState].premiums);
+          }
+          else {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-premiums").hide();
+          }
+          if(reinsurance[selectedState].design) {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-design").text(reinsurance[selectedState].design);
+          }
+          else {
+            d3.select(".state-info-body.reinsurance").select(".reinsurance-design").hide();
+          }
+        }
+
+        function setMandateData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.mandate").selectAll("p").show();
+          d3.select(".state-info-body.mandate").show();
+          d3.select(".state-info-body.mandate").select(".mandate-info").text(mandate[selectedState].info);
+          if(mandate[selectedState].coverage) {
+            d3.select(".state-info-body.mandate").select(".mandate-coverage").text(mandate[selectedState].coverage);
+          }
+          else {
+            d3.select(".state-info-body.mandate").select(".mandate-coverage").hide();
+          }
+          if(mandate[selectedState].penalty) {
+            d3.select(".state-info-body.mandate").select(".mandate-penalty").text(mandate[selectedState].penalty);
+          }
+          else {
+            d3.select(".state-info-body.mandate").select(".mandate-penalty").hide();
+          }
+        }
+
+        function setSubsidiesData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.subsidies").selectAll("p").show();
+          d3.select(".state-info-body.subsidies").show();
+          d3.select(".state-info-body.subsidies").select(".subsidies-info").text(subsidies[selectedState]);
+        }
+
+        function setRegulationData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.regulation").selectAll("p").show();
+          d3.select(".state-info-body.regulation").show();
+          d3.select(".state-info-body.regulation").select(".regulation-info").text(regulation[selectedState].info);
+          if(regulation[selectedState].underwritten) {
+            d3.select(".state-info-body.regulation").select(".regulation-underwritten").text(regulation[selectedState].underwritten);
+          }
+          else {
+            d3.select(".state-info-body.regulation").select(".regulation-underwritten").hide();
+          }
+          if(regulation[selectedState].contract) {
+            d3.select(".state-info-body.regulation").select(".regulation-contract").text(regulation[selectedState].contract);
+          }
+          else {
+            d3.select(".state-info-body.regulation").select(".regulation-contract").hide();
+          }
+          if(regulation[selectedState].enrollment) {
+            d3.select(".state-info-body.regulation").select(".regulation-enrollment").text(regulation[selectedState].enrollment);
+          }
+          else {
+            d3.select(".state-info-body.regulation").select(".regulation-enrollment").hide();
+          }
+        }
+
+        function setEnrollmentData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.enrollment").selectAll("p").show();
+          d3.select(".state-info-body.enrollment").show();
+          d3.select(".state-info-body.enrollment").select(".enrollment-present").text(enrollment[selectedState].present);
+          d3.select(".state-info-body.enrollment").select(".enrollment-future").text(enrollment[selectedState].future);
+        }
+
+        function setCompetitionData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.competition").selectAll("p").show();
+          d3.select(".state-info-body.competition").show();
+          d3.select(".state-info-body.competition").select(".competition-rule").text(competition[selectedState].rule);
+          if(competition[selectedState].pool) {
+            d3.select(".state-info-body.competition").select(".competition-pool").text(competition[selectedState].pool);
+          }
+          else {
+            d3.select(".state-info-body.competition").select(".competition-pool").hide();
+          }
+          if(competition[selectedState].individual) {
+            d3.select(".state-info-body.competition").select(".competition-individual").text(competition[selectedState].individual);
+          }
+          else {
+            d3.select(".state-info-body.competition").select(".competition-individual").hide();
+          }
+          if(competition[selectedState].public) {
+            d3.select(".state-info-body.competition").select(".competition-public").text(competition[selectedState].public);
+          }
+          else {
+            d3.select(".state-info-body.competition").select(".competition-public").hide();
+          }
+          if(competition[selectedState].minimum) {
+            d3.select(".state-info-body.competition").select(".competition-minimum").text(competition[selectedState].minimum);
+          }
+          else {
+            d3.select(".state-info-body.competition").select(".competition-minimum").hide();
+          }
+        }
+
+        function setTransitionalData() {
+          d3.selectAll(".aca-note").selectAll("p").hide();
+          d3.selectAll(".aca-note.transitional").selectAll("p").show();
+          d3.select(".state-info-body.transitional").show();
+          d3.select(".state-info-body.transitional").select(".transitional-info").text(transitional[selectedState]);
+        }
       }
-
-      function legendMouseout() {
-        svg.selectAll("path")
-            .style("fill-opacity", 1);
-        svg.select(".aca-dc")
-            .style("fill-opacity", 1);
-      }
-
-      var selector = document.getElementById("aca-selector");
-      var selectorValue = selector.value;
-      var selectedState = "Alabama";
-      setReinsuranceData();
-
-      selector.addEventListener("change", function() {
-        selectorValue = selector.value;
-        if(selectedState) checkSelector();
-      });
-
-      function stateClicked(d) {
-        svg.selectAll("path")
-            .style("fill-opacity", function(d) {
-              return 0.3;
-            });
-        d3.select(".aca-dc")
-            .style("fill-opacity", function(d) {
-              return 0.3;
-            });
-        d3.select(this)
-            .style("fill-opacity", function(d) {
-              return 1;
-            });
-        clicked = true;
-        if(d.state) {
-          selectedState = d.state;
-        }
-        else {
-          selectedState = d.properties.name;
-        }
-        d3.select(".aca-state-info").select("h1").text(selectedState);
-        checkSelector();
-        d3.event.stopPropagation();
-      }
-
-      function checkSelector() {
-        d3.selectAll(".state-info-body").selectAll("p").hide();
-        switch (selectorValue) {
-          case 'reinsurance':
-            setReinsuranceData();
-            break;
-          case 'mandate':
-            setMandateData();
-            break;
-          case 'subsidies':
-            setSubsidiesData();
-            break;
-          case 'regulation':
-            setRegulationData();
-            break;
-          case 'enrollment':
-            setEnrollmentData();
-            break;
-          case 'competition':
-            setCompetitionData();
-            break;
-          case 'transitional':
-            setTransitionalData();
-            break;
-          default:
-            console.log("There's an error");
-        }
-      }
-
-      function setReinsuranceData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.reinsurance").selectAll("p").show();
-        d3.select(".state-info-body.reinsurance").selectAll("p").show();
-        d3.select(".state-info-body.reinsurance").select(".reinsurance-program").text(reinsurance[selectedState].program);
-        if(reinsurance[selectedState].waiver) {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-waiver").text(reinsurance[selectedState].waiver);
-        }
-        else {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-waiver").hide();
-        }
-        if(reinsurance[selectedState].programFunding) {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-program-funding").text(reinsurance[selectedState].programFunding);
-        }
-        else {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-program-funding").hide();
-        }
-        if(reinsurance[selectedState].stateFunding) {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-state-funding").text(reinsurance[selectedState].stateFunding);
-        }
-        else {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-state-funding").hide();
-        }
-        if(reinsurance[selectedState].federalFunding) {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-federal-funding").text(reinsurance[selectedState].federalFunding);
-        }
-        else {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-federal-funding").hide();
-        }
-        if(reinsurance[selectedState].premiums) {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-premiums").text(reinsurance[selectedState].premiums);
-        }
-        else {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-premiums").hide();
-        }
-        if(reinsurance[selectedState].design) {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-design").text(reinsurance[selectedState].design);
-        }
-        else {
-          d3.select(".state-info-body.reinsurance").select(".reinsurance-design").hide();
-        }
-      }
-
-      function setMandateData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.mandate").selectAll("p").show();
-        d3.select(".state-info-body.mandate").selectAll("p").show();
-        d3.select(".state-info-body.mandate").select(".mandate-info").text(mandate[selectedState].info);
-        if(mandate[selectedState].coverage) {
-          d3.select(".state-info-body.mandate").select(".mandate-coverage").text(mandate[selectedState].coverage);
-        }
-        else {
-          d3.select(".state-info-body.mandate").select(".mandate-coverage").hide();
-        }
-        if(mandate[selectedState].penalty) {
-          d3.select(".state-info-body.mandate").select(".mandate-penalty").text(mandate[selectedState].penalty);
-        }
-        else {
-          d3.select(".state-info-body.mandate").select(".mandate-penalty").hide();
-        }
-      }
-
-      function setSubsidiesData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.subsidies").selectAll("p").show();
-        d3.select(".state-info-body.subsidies").selectAll("p").show();
-        d3.select(".state-info-body.subsidies").select(".subsidies-info").text(subsidies[selectedState]);
-      }
-
-      function setRegulationData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.regulation").selectAll("p").show();
-        d3.select(".state-info-body.regulation").selectAll("p").show();
-        d3.select(".state-info-body.regulation").select(".regulation-info").text(regulation[selectedState].info);
-        if(regulation[selectedState].underwritten) {
-          d3.select(".state-info-body.regulation").select(".regulation-underwritten").text(regulation[selectedState].underwritten);
-        }
-        else {
-          d3.select(".state-info-body.regulation").select(".regulation-underwritten").hide();
-        }
-        if(regulation[selectedState].contract) {
-          d3.select(".state-info-body.regulation").select(".regulation-contract").text(regulation[selectedState].contract);
-        }
-        else {
-          d3.select(".state-info-body.regulation").select(".regulation-contract").hide();
-        }
-        if(regulation[selectedState].enrollment) {
-          d3.select(".state-info-body.regulation").select(".regulation-enrollment").text(regulation[selectedState].enrollment);
-        }
-        else {
-          d3.select(".state-info-body.regulation").select(".regulation-enrollment").hide();
-        }
-      }
-
-      function setEnrollmentData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.enrollment").selectAll("p").show();
-        d3.select(".state-info-body.enrollment").selectAll("p").show();
-        d3.select(".state-info-body.enrollment").select(".enrollment-present").text(enrollment[selectedState].present);
-        d3.select(".state-info-body.enrollment").select(".enrollment-future").text(enrollment[selectedState].future);
-      }
-
-      function setCompetitionData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.competition").selectAll("p").show();
-        d3.select(".state-info-body.competition").selectAll("p").show();
-        d3.select(".state-info-body.competition").select(".competition-rule").text(competition[selectedState].rule);
-        if(competition[selectedState].pool) {
-          d3.select(".state-info-body.competition").select(".competition-pool").text(competition[selectedState].pool);
-        }
-        else {
-          d3.select(".state-info-body.competition").select(".competition-pool").hide();
-        }
-        if(competition[selectedState].individual) {
-          d3.select(".state-info-body.competition").select(".competition-individual").text(competition[selectedState].individual);
-        }
-        else {
-          d3.select(".state-info-body.competition").select(".competition-individual").hide();
-        }
-        if(competition[selectedState].public) {
-          d3.select(".state-info-body.competition").select(".competition-public").text(competition[selectedState].public);
-        }
-        else {
-          d3.select(".state-info-body.competition").select(".competition-public").hide();
-        }
-        if(competition[selectedState].minimum) {
-          d3.select(".state-info-body.competition").select(".competition-minimum").text(competition[selectedState].minimum);
-        }
-        else {
-          d3.select(".state-info-body.competition").select(".competition-minimum").hide();
-        }
-      }
-
-      function setTransitionalData() {
-        d3.selectAll(".aca-note").selectAll("p").hide();
-        d3.selectAll(".aca-note.transitional").selectAll("p").show();
-        d3.select(".state-info-body.transitional").selectAll("p").show();
-        d3.select(".state-info-body.transitional").select(".transitional-info").text(transitional[selectedState]);
-      }
-
     }
   </script>
 </body>

@@ -653,12 +653,14 @@
         function setDefaultData() {
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.select(".state-info-body.default").show();
+          d3.select(".state-info-body.default").selectAll("p").show();
         }
 
         function setReinsuranceData() {
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.reinsurance").selectAll("p").show();
           d3.select(".state-info-body.reinsurance").show();
+          d3.select(".state-info-body.reinsurance").selectAll("p").show();
           d3.select(".state-info-body.reinsurance").select(".reinsurance-program").text(reinsurance[selectedState].program);
           if(reinsurance[selectedState].waiver) {
             d3.select(".state-info-body.reinsurance").select(".reinsurance-waiver").text(reinsurance[selectedState].waiver);
@@ -702,6 +704,7 @@
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.mandate").selectAll("p").show();
           d3.select(".state-info-body.mandate").show();
+          d3.select(".state-info-body.mandate").selectAll("p").show();
           d3.select(".state-info-body.mandate").select(".mandate-info").text(mandate[selectedState].info);
           if(mandate[selectedState].coverage) {
             d3.select(".state-info-body.mandate").select(".mandate-coverage").text(mandate[selectedState].coverage);
@@ -721,6 +724,7 @@
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.subsidies").selectAll("p").show();
           d3.select(".state-info-body.subsidies").show();
+          d3.select(".state-info-body.subsidies").selectAll("p").show();
           d3.select(".state-info-body.subsidies").select(".subsidies-info").text(subsidies[selectedState]);
         }
 
@@ -728,6 +732,7 @@
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.regulation").selectAll("p").show();
           d3.select(".state-info-body.regulation").show();
+          d3.select(".state-info-body.regulation").selectAll("p").show();
           d3.select(".state-info-body.regulation").select(".regulation-info").text(regulation[selectedState].info);
           if(regulation[selectedState].underwritten) {
             d3.select(".state-info-body.regulation").select(".regulation-underwritten").text(regulation[selectedState].underwritten);
@@ -753,6 +758,7 @@
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.enrollment").selectAll("p").show();
           d3.select(".state-info-body.enrollment").show();
+          d3.select(".state-info-body.enrollment").selectAll("p").show();
           d3.select(".state-info-body.enrollment").select(".enrollment-present").text(enrollment[selectedState].present);
           d3.select(".state-info-body.enrollment").select(".enrollment-future").text(enrollment[selectedState].future);
         }
@@ -761,6 +767,7 @@
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.competition").selectAll("p").show();
           d3.select(".state-info-body.competition").show();
+          d3.select(".state-info-body.competition").selectAll("p").show();
           d3.select(".state-info-body.competition").select(".competition-rule").text(competition[selectedState].rule);
           if(competition[selectedState].pool) {
             d3.select(".state-info-body.competition").select(".competition-pool").text(competition[selectedState].pool);
@@ -792,6 +799,7 @@
           d3.selectAll(".aca-note").selectAll("p").hide();
           d3.selectAll(".aca-note.transitional").selectAll("p").show();
           d3.select(".state-info-body.transitional").show();
+          d3.select(".state-info-body.transitional").selectAll("p").show();
           d3.select(".state-info-body.transitional").select(".transitional-info").text(transitional[selectedState]);
         }
       }
